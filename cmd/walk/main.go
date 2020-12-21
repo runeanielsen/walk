@@ -30,13 +30,9 @@ func main() {
 	size := flag.Int64("size", 0, "Minimum file size")
 	flag.Parse()
 
-	var (
-		f   = os.Stdout
-		err error
-	)
-
+	f := os.Stdout
 	if *logFile != "" {
-		f, err = os.OpenFile(*logFile, os.O_APPEND|os.O_CREATE|os.O_RDWR, 0644)
+		f, err := os.OpenFile(*logFile, os.O_APPEND|os.O_CREATE|os.O_RDWR, 0644)
 		if err != nil {
 			fmt.Fprintln(os.Stderr, err)
 			os.Exit(1)
