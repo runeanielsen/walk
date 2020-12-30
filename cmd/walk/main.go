@@ -8,7 +8,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"runeanielsen/walk/internal/action"
+	"github.com/runeanielsen/walk/internal/action"
 )
 
 type config struct {
